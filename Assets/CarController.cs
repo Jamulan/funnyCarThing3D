@@ -18,14 +18,14 @@ public class CarController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float engine = Input.GetAxisRaw("Vertical") * engine_power * Time.deltaTime;
+        float engine = Input.GetAxisRaw("Vertical") * engine_power;
 
         front_left.motorTorque = engine;
         front_right.motorTorque = engine;
-        back_left.motorTorque = engine;
-        back_right.motorTorque = engine;
+        //back_left.motorTorque = engine;
+        //back_right.motorTorque = engine;
 
         float steering = Input.GetAxisRaw("Horizontal") * steering_power;
 
